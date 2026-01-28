@@ -1,5 +1,6 @@
 # Diagram
 
+```mermaid
 graph TD
     %% Cluster
     subgraph Cluster["Kubernetes Cluster (Managed by Control Plane)"]
@@ -53,6 +54,7 @@ graph TD
     %% Style for network overlay
     classDef overlay stroke:#00BFFF,stroke-width:2px,stroke-dasharray: 5 5;
     class PodA,PodB,PodC,PodD,PodE,PodF,PodG,PodH,PodI overlay;
+```
 
 # Intro to CI/CD Practice Code
 
