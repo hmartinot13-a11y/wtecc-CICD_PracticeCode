@@ -19,3 +19,46 @@ This repository contains the practice code for the labs in **IBM-CD0215EN-Skills
 John Rofrano, Senior Technical Staff Member, DevOps Champion, @ IBM Research
 
 ## <h3 align="center"> © IBM Corporation 2022. All rights reserved. <h3/>
+
+graph TD
+    %% Cluster
+    subgraph Cluster["Kubernetes Cluster (Control Plane Managed)"]
+        
+        %% Node 1
+        subgraph Node1["Node 1 (Worker)"]
+            subgraph VMGroup1["VM1 | VM2 | VM3"]
+                subgraph Pods1["Pods"]
+                    PodA["Pod A\n- Container 1\n- Container 2"]
+                    PodB["Pod B\n- Container 1"]
+                    PodC["Pod C\n- Container 1"]
+                end
+            end
+        end
+
+        %% Node 2
+        subgraph Node2["Node 2 (Worker)"]
+            subgraph VMGroup2["VM4 | VM5 | VM6"]
+                subgraph Pods2["Pods"]
+                    PodD["Pod D\n- Container 1\n- Container 2"]
+                    PodE["Pod E\n- Container 1"]
+                    PodF["Pod F\n- Container 1"]
+                end
+            end
+        end
+
+        %% Node 3
+        subgraph Node3["Node 3 (Worker)"]
+            subgraph VMGroup3["VM7 | VM8 | VM9"]
+                subgraph Pods3["Pods"]
+                    PodG["Pod G\n- Container 1\n- Container 2"]
+                    PodH["Pod H\n- Container 1"]
+                    PodI["Pod I\n- Container 1"]
+                end
+            end
+        end
+    end
+
+    %% Connections between nodes
+    Node1 --- Node2
+    Node2 --- Node3
+    Node3 --- Node1
